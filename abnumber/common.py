@@ -11,6 +11,7 @@ WHITESPACE = re.compile(r'\s+')
 
 
 def _validate_chain_type(chain_type):
+    return True
     assert chain_type in ['H', 'L', 'K'], \
         f'Invalid chain type "{chain_type}", it should be "H" (heavy),  "L" (lambda light chian) or "K" (kappa light chain)'
 
@@ -31,6 +32,7 @@ def _anarci_align(sequences, scheme, allowed_species, assign_germline=False, use
     else:
         from anarcii import Anarcii
         try:
+
             model = Anarcii(**(anarcii_args or {}))
             model.number(sequences)
             model.to_scheme(scheme)

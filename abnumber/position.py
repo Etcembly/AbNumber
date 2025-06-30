@@ -85,6 +85,10 @@ class Position:
             return 'H'
         if self.chain_type in ['K', 'L']:
             return 'L'
+        if self.chain_type == 'A':
+            return 'A'
+        if self.chain_type == 'B':
+            return 'B'
         raise NotImplementedError(f'Unknown chain type "{self.chain_type}"')
 
     def _sort_key(self):
